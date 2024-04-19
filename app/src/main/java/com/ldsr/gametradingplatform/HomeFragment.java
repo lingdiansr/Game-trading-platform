@@ -8,6 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
+import com.youth.banner.Banner;
+import com.youth.banner.adapter.BannerAdapter;
+import com.youth.banner.adapter.BannerImageAdapter;
+import com.youth.banner.holder.BannerImageHolder;
+import com.youth.banner.indicator.CircleIndicator;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
@@ -60,6 +74,21 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        List<Integer> bannerList = new ArrayList<>();
+//        bannerList.add("https://www.hnucm.edu.cn/images/dongtangxiaoqu.jpg");
+        bannerList.add(R.drawable.banner);
+        bannerList.add(R.drawable.banner);
+
+        Banner banner = view.findViewById(R.id.banner);
+        banner.setAdapter(new BannerImageAdapter<Integer>(bannerList) {
+            @Override
+            public void onBindView(BannerImageHolder holder, Integer data, int position, int size) {
+                Glide.with(holder.itemView).load(data)
+                        .into(holder.imageView);
+            }
+        });
+        banner.setIndicator(new CircleIndicator(view.getContext()));
+        banner.setIndicatorRadius(100);
         return view;
     }
 }
