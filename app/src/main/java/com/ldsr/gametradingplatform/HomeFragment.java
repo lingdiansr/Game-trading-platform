@@ -1,20 +1,26 @@
 package com.ldsr.gametradingplatform;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestBuilder;
-import com.bumptech.glide.load.resource.bitmap.CircleCrop;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
+import com.ldsr.gametradingplatform.entity.GoodItem;
 import com.youth.banner.Banner;
-import com.youth.banner.adapter.BannerAdapter;
 import com.youth.banner.adapter.BannerImageAdapter;
 import com.youth.banner.holder.BannerImageHolder;
 import com.youth.banner.indicator.CircleIndicator;
@@ -69,11 +75,43 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    List<GoodItem> goodItemList = new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        initBanner(view);
+
+        for (int i = 0; i < 8; i++) {
+            GoodItem goodItem = new GoodItem();
+            goodItem.setImgUrl("app/src/main/res/drawable/gameicon.png");
+            goodItem.setGoodTitle("王者荣耀最强王者段位全英雄全皮肤");
+            goodItem.setPrice(280);
+            goodItem.setPurchasedNumber(11);
+            goodItem.setGameName("王者荣耀");
+            goodItemList.add(goodItem);
+        }
+
+        RecyclerView recyclerView = view.findViewById(R.id.goodsRecyclerView);
+        recyclerView.setAdapter(new MyAdapter());
+//        GridLayoutManager manager =new GridLayoutManager(getContext(),2){
+//            @Override
+//            public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
+////                return super.scrollVerticallyBy(dy, recycler, state);
+//                return 0;
+//            }
+//        };
+//        recyclerView.setNestedScrollingEnable(false);
+
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+
+
+        return view;
+    }
+
+    private static void initBanner(View view) {
         List<Integer> bannerList = new ArrayList<>();
 //        bannerList.add("https://www.hnucm.edu.cn/images/dongtangxiaoqu.jpg");
         bannerList.add(R.drawable.banner);
@@ -89,6 +127,49 @@ public class HomeFragment extends Fragment {
         });
         banner.setIndicator(new CircleIndicator(view.getContext()));
         banner.setIndicatorRadius(100);
-        return view;
     }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+        ImageView imageView;
+        TextView titleTextView;
+        TextView priceTextView;
+        TextView purchasedNumberTextView;
+        TextView gameNameTextView;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            imageView=itemView.findViewById(R.id.gameImage);
+            titleTextView=itemView.findViewById(R.id.itemTitle);
+            priceTextView=itemView.findViewById(R.id.price);
+            purchasedNumberTextView=itemView.findViewById(R.id.purchasedNumber);
+            gameNameTextView=itemView.findViewById(R.id.gameName);
+        }
+    }
+    public class MyAdapter extends RecyclerView.Adapter<MyViewHolder>{
+
+        @NonNull
+        @Override
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(getContext())
+                    .inflate(R.layout.goods_item_layout,parent,false);
+            return new MyViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+            GoodItem goodItem = goodItemList.get(position);
+//            Glide.with(getContext())
+//                    .load(goodItem.getImgUrl())
+//                    .into(holder.imageView);
+            holder.titleTextView.setText(goodItem.getGoodTitle());
+            holder.priceTextView.setText("￥"+goodItem.getPrice());
+            holder.purchasedNumberTextView.setText(goodItem.getPurchasedNumber()+"人已购买");
+            holder.gameNameTextView.setText(goodItem.getGameName());
+        }
+
+        @Override
+        public int getItemCount() {
+            return goodItemList.size();
+        }
+    }
+
 }
