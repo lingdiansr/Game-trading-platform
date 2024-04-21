@@ -1,22 +1,25 @@
 package com.ldsr.gametradingplatform;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.graphics.Rect;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.ldsr.gametradingplatform.entity.GoodItem;
@@ -26,7 +29,10 @@ import com.youth.banner.holder.BannerImageHolder;
 import com.youth.banner.indicator.CircleIndicator;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Timer;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,14 +82,100 @@ public class HomeFragment extends Fragment {
     }
 
     List<GoodItem> goodItemList = new ArrayList<>();
+    List<String> switchingText =new ArrayList<>();
+    Timer timer;
 
+    int textSwitcherNum=0;
+    TextSwitcher textSwitcher;
+
+//    List<String> gameContent= new ArrayList<>();
+    Map<TextView,String> gameContent =new HashMap<>();
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         initBanner(view);
+        initTextSwitcher(view);
+        initGameContent(view);
+        initRecyclerView(view);
 
+        return view;
+    }
+
+    private void initGameContent(View view) {
+        List<String> values= new ArrayList<>();
+        List<TextView> keys =new ArrayList<>();
+        values.add("王者荣耀");
+        values.add("航海王");
+        values.add("神武4");
+        values.add("火影忍者");
+        values.add("口袋妖怪");
+        values.add("穿越火线");
+        values.add("闪烁之光");
+        values.add("仙境传说");
+        values.add("率土之滨");
+        values.add("少年三国志");
+        values.add("三国志");
+        values.add("阿拉德之怒");
+        keys.add(view.findViewById(R.id.textView9));
+        keys.add(view.findViewById(R.id.textView10));
+        keys.add(view.findViewById(R.id.textView11));
+        keys.add(view.findViewById(R.id.textView12));
+        keys.add(view.findViewById(R.id.textView15));
+        keys.add(view.findViewById(R.id.textView16));
+        keys.add(view.findViewById(R.id.textView17));
+        keys.add(view.findViewById(R.id.textView18));
+        keys.add(view.findViewById(R.id.textView19));
+        keys.add(view.findViewById(R.id.textView20));
+        keys.add(view.findViewById(R.id.textView21));
+        keys.add(view.findViewById(R.id.textView22));
+        for (int i = 0; i < 12; i++) {
+            gameContent.put(keys.get(i),values.get(i));
+
+        }
+        for (TextView textView : gameContent.keySet()) {
+            textView.setText(gameContent.get(textView));
+        }
+    }
+
+    private void initTextSwitcher(View view) {
+        switchingText.add("汪峰 购买了 41041金1988钻 ￥0.01");
+        switchingText.add("孙悟空 购买了 4464601金988钻 ￥10.01");
+        switchingText.add("红孩儿 购买了 41316441金2488钻 ￥100.01");
+        switchingText.add("哪吒 购买了 346041金1588钻 ￥1000.01");
+        textSwitcher= view.findViewById(R.id.textswitcher);
+        textSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+                TextView textView = new TextView(getContext());
+                textView.setEllipsize(TextUtils.TruncateAt.END);
+                textView.setMaxLines(1);
+                textView.setTextSize(15);
+                textView.setTextColor(Color.BLACK);
+                textView.setLayoutParams(
+                        new FrameLayout.LayoutParams(
+                                LinearLayout.LayoutParams.MATCH_PARENT,
+                                ViewGroup.LayoutParams.WRAP_CONTENT));
+                return textView;
+            }
+
+        });
+        textSwitcher.setText(switchingText.get(0));
+        Handler handler =new Handler();
+        Runnable task = new Runnable() {
+            @Override
+            public void run() {
+                textSwitcherNum=++textSwitcherNum%switchingText.size();
+                textSwitcher.setText(switchingText.get(textSwitcherNum));
+                handler.postDelayed(this,2000);
+            }
+        };
+        handler.postDelayed(task,2000);
+    }
+
+    private void initRecyclerView(View view) {
         for (int i = 0; i < 8; i++) {
             GoodItem goodItem = new GoodItem();
             goodItem.setImgUrl("app/src/main/res/drawable/gameicon.png");
@@ -96,19 +188,7 @@ public class HomeFragment extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.goodsRecyclerView);
         recyclerView.setAdapter(new MyAdapter());
-//        GridLayoutManager manager =new GridLayoutManager(getContext(),2){
-//            @Override
-//            public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
-////                return super.scrollVerticallyBy(dy, recycler, state);
-//                return 0;
-//            }
-//        };
-//        recyclerView.setNestedScrollingEnable(false);
-
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
-
-
-        return view;
     }
 
     private static void initBanner(View view) {
