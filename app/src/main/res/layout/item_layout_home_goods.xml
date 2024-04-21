@@ -23,7 +23,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F5F5F5">
+            android:background="@color/theme_gray">
 
             <ImageView
                 android:id="@+id/gameImage"
@@ -32,7 +32,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/gameitem" />
+                app:srcCompat="@drawable/goods_gameitem" />
 
             <TextView
                 android:id="@+id/itemTitle"
@@ -53,7 +53,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/itemTitle"
-                app:srcCompat="@drawable/consignment" />
+                app:srcCompat="@drawable/home_goods_consignment" />
 
             <ImageView
                 android:id="@+id/imageView27"
@@ -63,7 +63,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toEndOf="@+id/imageView26"
                 app:layout_constraintTop_toBottomOf="@+id/itemTitle"
-                app:srcCompat="@drawable/insured" />
+                app:srcCompat="@drawable/home_goods_insured" />
 
             <TextView
                 android:id="@+id/price"

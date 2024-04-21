@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -194,8 +193,8 @@ public class HomeFragment extends Fragment {
     private static void initBanner(View view) {
         List<Integer> bannerList = new ArrayList<>();
 //        bannerList.add("https://www.hnucm.edu.cn/images/dongtangxiaoqu.jpg");
-        bannerList.add(R.drawable.banner);
-        bannerList.add(R.drawable.banner);
+        bannerList.add(R.drawable.home_options_banner);
+        bannerList.add(R.drawable.home_options_banner);
 
         Banner banner = view.findViewById(R.id.banner);
         banner.setAdapter(new BannerImageAdapter<Integer>(bannerList) {
@@ -230,7 +229,7 @@ public class HomeFragment extends Fragment {
         @Override
         public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(getContext())
-                    .inflate(R.layout.goods_item_layout,parent,false);
+                    .inflate(R.layout.item_layout_home_goods,parent,false);
             return new MyViewHolder(view);
         }
 
