@@ -186,7 +186,7 @@ public class HomeFragment extends Fragment {
         }
 
         RecyclerView recyclerView = view.findViewById(R.id.goodsRecyclerView);
-        recyclerView.setAdapter(new MyAdapter());
+        recyclerView.setAdapter(new HomeAdapter());
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
     }
 
@@ -195,7 +195,7 @@ public class HomeFragment extends Fragment {
 //        bannerList.add("https://www.hnucm.edu.cn/images/dongtangxiaoqu.jpg");
         bannerList.add(R.drawable.home_options_banner);
         bannerList.add(R.drawable.home_options_banner);
-
+//        bannerList.add();
         Banner banner = view.findViewById(R.id.banner);
         banner.setAdapter(new BannerImageAdapter<Integer>(bannerList) {
             @Override
@@ -208,13 +208,13 @@ public class HomeFragment extends Fragment {
         banner.setIndicatorRadius(100);
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class HomeViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
         TextView titleTextView;
         TextView priceTextView;
         TextView purchasedNumberTextView;
         TextView gameNameTextView;
-        public MyViewHolder(@NonNull View itemView) {
+        public HomeViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.gameImage);
             titleTextView=itemView.findViewById(R.id.itemTitle);
@@ -223,18 +223,18 @@ public class HomeFragment extends Fragment {
             gameNameTextView=itemView.findViewById(R.id.gameName);
         }
     }
-    public class MyAdapter extends RecyclerView.Adapter<MyViewHolder>{
+    public class HomeAdapter extends RecyclerView.Adapter<HomeViewHolder>{
 
         @NonNull
         @Override
-        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public HomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(getContext())
                     .inflate(R.layout.item_layout_home_goods,parent,false);
-            return new MyViewHolder(view);
+            return new HomeViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
             GoodItem goodItem = goodItemList.get(position);
 //            Glide.with(getContext())
 //                    .load(goodItem.getImgUrl())

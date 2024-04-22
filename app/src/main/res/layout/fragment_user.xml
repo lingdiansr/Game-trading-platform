@@ -4,16 +4,686 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/theme_gray"
     tools:context=".UserFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我的"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout24"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/theme_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="180dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView29"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/user_userimg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="子墨ZIMO"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintStart_toEndOf="@+id/imageView29"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.dreamgyf.android.ui.widget.shape.ShapeLayout
+                android:id="@+id/button2"
+                android:layout_width="45dp"
+                android:layout_height="17dp"
+                app:cornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView37"
+                app:layout_constraintTop_toBottomOf="@+id/textView37"
+                app:solid="@color/white">
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="已实名"
+                    android:textAlignment="center"
+                    android:textColor="@color/theme_red"
+                    android:textSize="10sp" />
+
+            </com.dreamgyf.android.ui.widget.shape.ShapeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout28"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout26"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/constraintLayout25"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView39"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1457.38"
+                        android:textColor="@color/theme_red"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/textView41"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="可用余额"
+                        android:textColor="@color/text_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout25"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/constraintLayout27"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/constraintLayout26"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView45"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000.00"
+                        android:textColor="@color/theme_red"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/textView47"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="保证金"
+                        android:textColor="@color/text_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout27"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/constraintLayout25"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.00"
+                        android:textColor="@color/theme_red"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/textView49"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textView49"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="冻结金额"
+                        android:textColor="@color/text_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout29"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout28">
+
+                <TextView
+                    android:id="@+id/textView50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="TextView"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView50">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout36"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@+id/constraintLayout35"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout32"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout31"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="spread"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageView32"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_to_be_payment" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout31"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout33"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout32">
+
+                            <ImageView
+                                android:id="@+id/imageView33"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_to_be_shipped" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout33"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout34"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout31">
+
+                            <ImageView
+                                android:id="@+id/imageView34"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_to_be_received" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout34"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout33">
+
+                            <ImageView
+                                android:id="@+id/imageView35"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_all_orders" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout35"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout36">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout42"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout41"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageView39"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_collection" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout41"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout43"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout42">
+
+                            <ImageView
+                                android:id="@+id/imageView40"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_historical_browsing" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout43"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout44"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout41">
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout44"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout43">
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout30"
+                android:layout_width="match_parent"
+                android:layout_height="316dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout29">
+
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="TextView"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout46"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@+id/constraintLayout45"
+                        app:layout_constraintTop_toTopOf="parent" >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout49"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout48"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageView41"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_to_be_reviewed" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout48"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout50"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout49">
+
+                            <ImageView
+                                android:id="@+id/imageView42"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_on_sale" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout50"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout51"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout48">
+
+                            <ImageView
+                                android:id="@+id/imageView43"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_sold" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout51"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout50">
+
+                            <ImageView
+                                android:id="@+id/imageView44"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_all_products" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout45"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@+id/constraintLayout47"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout46" >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout53"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout52"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageView45"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_to_be_shipped" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout52"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout54"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout53">
+
+                            <ImageView
+                                android:id="@+id/imageView46"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_to_be_received" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout54"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout55"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout52">
+
+                            <ImageView
+                                android:id="@+id/imageView47"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_transaction_successful" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout55"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout54">
+
+                            <ImageView
+                                android:id="@+id/imageView48"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_all_orders" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout47"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout45" >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout57"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout56"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageView49"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_real_name_authentication" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout56"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout58"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout57">
+
+                            <ImageView
+                                android:id="@+id/imageView50"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/user_store_information" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout58"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toStartOf="@+id/constraintLayout59"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout56">
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout59"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/constraintLayout58">
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout30">
+
+                <TextView
+                    android:id="@+id/textView52"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="TextView"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout61"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toStartOf="@+id/constraintLayout60"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageView51"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/user_official_customer_service" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout60"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toStartOf="@+id/constraintLayout62"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/constraintLayout61">
+
+                        <ImageView
+                            android:id="@+id/imageView52"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/user_help_center" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout62"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toStartOf="@+id/constraintLayout63"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/constraintLayout60">
+
+                        <ImageView
+                            android:id="@+id/imageView53"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/user_settings" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout63"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/constraintLayout62">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/ShopCarGoodCheckBox"
+        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/ShopCarGoodImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ShopCarGoodImg" />
+
+    <ImageView
+        android:id="@+id/ShopCarGoodImg"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toEndOf="@+id/ShopCarGoodCheckBox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/goods_gameitem" />
+
+    <TextView
+        android:id="@+id/ShopCarGoodTitle"
+        android:layout_width="212dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/ShopCarGoodImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ShopCarGoodShippingForm"
+        android:layout_width="108dp"
+        android:layout_height="16dp"
+        android:text="TextView"
+        android:textColor="@color/text_gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/ShopCarGoodTitle"
+        app:layout_constraintTop_toBottomOf="@+id/ShopCarGoodTitle" />
+
+    <TextView
+        android:id="@+id/ShopCarGoodPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="@color/theme_red"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/ShopCarGoodShippingForm"
+        app:layout_constraintTop_toBottomOf="@+id/ShopCarGoodShippingForm" />
+
+    <com.dreamgyf.android.ui.widget.shape.ShapeLayout
+        android:layout_width="78dp"
+        android:layout_height="22dp"
+        app:cornerRadius="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ShopCarGoodPrice"
+        app:strokeColor="@color/text_light_gray"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.dreamgyf.android.ui.widget.shape.ShapeLayout
+                android:layout_width="22dp"
+                android:layout_height="match_parent"
+                app:cornerBottomLeftRadius="4dp"
+                app:cornerTopLeftRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/text_light_gray"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="-" />
+            </com.dreamgyf.android.ui.widget.shape.ShapeLayout>
+
+            <TextView
+                android:id="@+id/ShopCarGoodNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="22dp"
+                android:layout_marginEnd="22dp"
+                android:gravity="center"
+                android:text="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.dreamgyf.android.ui.widget.shape.ShapeLayout
+                android:layout_width="22dp"
+                android:layout_height="match_parent"
+                app:cornerBottomRightRadius="4dp"
+                app:cornerTopRightRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/text_light_gray"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="+" />
+            </com.dreamgyf.android.ui.widget.shape.ShapeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.dreamgyf.android.ui.widget.shape.ShapeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
