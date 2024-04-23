@@ -1,4 +1,4 @@
-package com.ldsr.gametradingplatform;
+package com.ldsr.gametradingplatform.home;
 
 import android.os.Bundle;
 
@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ldsr.gametradingplatform.R;
 import com.ldsr.gametradingplatform.entity.ShopCarGoodItem;
 import com.ldsr.gametradingplatform.entity.ShopCarShopItem;
 

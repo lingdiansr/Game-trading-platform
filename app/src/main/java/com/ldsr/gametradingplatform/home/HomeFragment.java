@@ -1,4 +1,4 @@
-package com.ldsr.gametradingplatform;
+package com.ldsr.gametradingplatform.home;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.ldsr.gametradingplatform.R;
 import com.ldsr.gametradingplatform.entity.GoodItem;
 import com.youth.banner.Banner;
 import com.youth.banner.adapter.BannerImageAdapter;

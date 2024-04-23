@@ -26,6 +26,46 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+//    def listSubFile = {
+//        def resFolder = 'src/main/res/layout'
+//        def files = file(resFolder).listFiles()
+//        def folders = []
+//        files.each {
+//            item -> folders.add(item.absolutePath)
+//        }
+//        folders.add(file(resFolder).parentFile.absolutePath)
+//        return folders
+//    }
+
+//    def listSubFiles ={
+//        def resFolder = 'src/main/res/layout'
+//        def folders = []
+//        def files = file(resFolder).listFiles()
+//        files.each { file ->
+//            if (file.directory) {
+//                // 递归地调用listSubFiles来处理子目录
+//                folders.addAll(listSubFiles(file.absolutePath))
+//            } else {
+//                // 添加文件的绝对路径到folders列表中
+//                folders.add(file.absolutePath)
+//            }
+//        }
+//        // 添加当前目录的绝对路径到folders列表中
+//        folders.add(file(resFolder).absolutePath)
+//        return folders
+//    }
+
+    sourceSets{
+        main{
+//            res.srcDirs=listSubFile()
+            res.srcDirs=[
+                    'src/main/res',
+                    'src/main/res/layout/layout_Home',
+                    'src/main/res/layout/layout_Login'
+//                    'src/main/res/layout',
+            ]
+        }
+    }
 }
 
 dependencies {
@@ -41,6 +81,6 @@ dependencies {
 
     implementation ("io.github.youth5201314:banner:2.2.3")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
-    implementation 'com.dreamgyf.android.ui.widget:ShapeLayout:1.1'
+    implementation ("com.dreamgyf.android.ui.widget:ShapeLayout:1.1")
 
 }
