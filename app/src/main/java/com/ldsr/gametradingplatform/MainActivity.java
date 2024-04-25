@@ -9,7 +9,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.ldsr.gametradingplatform.home.HomeActivity;
 import com.ldsr.gametradingplatform.login.LoginActivity;
 
 
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         });
 //        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+//        Intent intent = new Intent(MainActivity.this, SignInActivity.class);
 
         startActivity(intent);
     }
