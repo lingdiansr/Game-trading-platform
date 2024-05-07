@@ -73,11 +73,7 @@ public class ShopCarFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_shop_car, container, false);
-
-
         initRecyclerViewData();
-
-
         initRecyclerView(view);
         return view;
     }

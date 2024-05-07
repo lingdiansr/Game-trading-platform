@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
         TextView signUp = findViewById(R.id.Sign_up);
+        TextView forgotPassword = findViewById(R.id.forgotpassword);
         EditText signInAccount = findViewById(R.id.signInAccount);
         EditText signInPassword = findViewById(R.id.signInPassword);
         TextView signInButton = findViewById(R.id.signInButton);
@@ -38,6 +39,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         }
                     };
-                    handler.postDelayed(runnable, 1000);
+                    handler.postDelayed(runnable, 500);
                     Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(LoginActivity.this, "登录失败！", Toast.LENGTH_SHORT).show();

@@ -1,6 +1,7 @@
 package com.ldsr.gametradingplatform.home;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.ldsr.gametradingplatform.R;
+import com.ldsr.gametradingplatform.SearchActivity;
 import com.ldsr.gametradingplatform.entity.GoodItem;
 import com.youth.banner.Banner;
 import com.youth.banner.adapter.BannerImageAdapter;
@@ -101,6 +103,14 @@ public class HomeFragment extends Fragment {
         initGameContent(view);
         initRecyclerView(view);
 
+        ImageView search = view.findViewById(R.id.searchImage);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(view.getContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

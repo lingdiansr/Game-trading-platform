@@ -16,6 +16,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.RecoverByMailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GameTradingPlatform" />
+        <activity
+            android:name=".login.NewPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.RecoverByPhoneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.SignUpActivity"
             android:exported="false" />
         <activity

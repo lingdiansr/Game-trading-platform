@@ -57,14 +57,17 @@ android {
 
     sourceSets{
         main{
-//            res.srcDirs=listSubFile()
-            res.srcDirs=[
-                    'src/main/res',
-                    'src/main/res/layout/layout_Home',
-                    'src/main/res/layout/layout_Login'
-//                    'src/main/res/layout',
-            ]
+////            res.srcDirs=listSubFile()
+//            res.srcDirs=[
+//                    'src/main/res',
+//                    'src/main/res/layout/layout_Home',
+//                    'src/main/res/layout/layout_Login'
+////                    'src/main/res/layout',
+//            ]
         }
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -75,6 +78,8 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     implementation libs.legacy.support.v4
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
