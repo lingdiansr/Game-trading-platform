@@ -11,12 +11,14 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.ldsr.gametradingplatform.R;
+import com.ldsr.gametradingplatform.home.buyFrag.BuyFragment;
+import com.ldsr.gametradingplatform.home.homeFrag.HomeFragment;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity {
-    Map<ConstraintLayout, Fragment> layoutToFragmentMap = new HashMap<>();
+    public  Map<ConstraintLayout, Fragment> layoutToFragmentMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

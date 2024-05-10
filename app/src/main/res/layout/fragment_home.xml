@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/theme_gray"
-    tools:context=".home.HomeFragment">
+    tools:context=".home.homeFrag.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -60,8 +60,9 @@
                 android:id="@+id/banner"
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
+                android:layout_marginTop="48dp"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="0dp">
+                tools:layout_editor_absoluteX="112dp">
 
             </com.youth.banner.Banner>
 
@@ -70,11 +71,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:background="@color/white"
-                app:layout_constraintTop_toBottomOf="@+id/banner"
-                tools:layout_editor_absoluteX="0dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banner">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout3"
+                    android:id="@+id/topupcenter"
                     android:layout_width="0dp"
                     android:layout_height="118dp"
                     android:layout_marginStart="20dp"
@@ -117,7 +119,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
+                    app:layout_constraintStart_toEndOf="@+id/topupcenter"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView

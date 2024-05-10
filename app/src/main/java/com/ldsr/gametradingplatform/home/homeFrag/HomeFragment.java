@@ -1,4 +1,4 @@
-package com.ldsr.gametradingplatform.home;
+package com.ldsr.gametradingplatform.home.homeFrag;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -17,13 +17,13 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.ldsr.gametradingplatform.R;
-import com.ldsr.gametradingplatform.SearchActivity;
 import com.ldsr.gametradingplatform.entity.GoodItem;
 import com.youth.banner.Banner;
 import com.youth.banner.adapter.BannerImageAdapter;
@@ -104,10 +104,18 @@ public class HomeFragment extends Fragment {
         initRecyclerView(view);
 
         ImageView search = view.findViewById(R.id.searchImage);
+        ConstraintLayout topUpCenter = view.findViewById(R.id.topupcenter);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(view.getContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+        topUpCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(view.getContext(), TopUpCenterActivity.class);
                 startActivity(intent);
             }
         });
