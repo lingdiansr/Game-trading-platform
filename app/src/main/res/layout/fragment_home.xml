@@ -61,8 +61,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:layout_marginTop="48dp"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="112dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
             </com.youth.banner.Banner>
 

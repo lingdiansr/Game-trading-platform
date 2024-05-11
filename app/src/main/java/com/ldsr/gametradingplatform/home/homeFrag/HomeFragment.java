@@ -205,7 +205,7 @@ public class HomeFragment extends Fragment {
         }
 
         RecyclerView recyclerView = view.findViewById(R.id.goodsRecyclerView);
-        recyclerView.setAdapter(new HomeAdapter());
+        recyclerView.setAdapter(new MyAdapter());
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
     }
 
@@ -227,33 +227,19 @@ public class HomeFragment extends Fragment {
         banner.setIndicatorRadius(100);
     }
 
-    public class HomeViewHolder extends RecyclerView.ViewHolder{
-        ImageView imageView;
-        TextView titleTextView;
-        TextView priceTextView;
-        TextView purchasedNumberTextView;
-        TextView gameNameTextView;
-        public HomeViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imageView=itemView.findViewById(R.id.gameImage);
-            titleTextView=itemView.findViewById(R.id.itemTitle);
-            priceTextView=itemView.findViewById(R.id.price);
-            purchasedNumberTextView=itemView.findViewById(R.id.purchasedNumber);
-            gameNameTextView=itemView.findViewById(R.id.gameName);
-        }
-    }
-    public class HomeAdapter extends RecyclerView.Adapter<HomeViewHolder>{
+
+    private class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder>{
 
         @NonNull
         @Override
-        public HomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(getContext())
                     .inflate(R.layout.item_layout_home_goods,parent,false);
-            return new HomeViewHolder(view);
+            return new MyHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull MyHolder holder, int position) {
             GoodItem goodItem = goodItemList.get(position);
 //            Glide.with(getContext())
 //                    .load(goodItem.getImgUrl())
@@ -267,6 +253,21 @@ public class HomeFragment extends Fragment {
         @Override
         public int getItemCount() {
             return goodItemList.size();
+        }
+        private class MyHolder extends RecyclerView.ViewHolder{
+            ImageView imageView;
+            TextView titleTextView;
+            TextView priceTextView;
+            TextView purchasedNumberTextView;
+            TextView gameNameTextView;
+            private MyHolder(@NonNull View itemView) {
+                super(itemView);
+                imageView=itemView.findViewById(R.id.gameImage);
+                titleTextView=itemView.findViewById(R.id.itemTitle);
+                priceTextView=itemView.findViewById(R.id.price);
+                purchasedNumberTextView=itemView.findViewById(R.id.purchasedNumber);
+                gameNameTextView=itemView.findViewById(R.id.gameName);
+            }
         }
     }
 

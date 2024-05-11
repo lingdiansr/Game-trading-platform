@@ -1,9 +1,11 @@
-package com.ldsr.gametradingplatform.home;
+package com.ldsr.gametradingplatform.home.saleFrag;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,6 +64,38 @@ public class SaleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sale, container, false);
+        SaleGameCategoriesFragment saleGameCategoriesFragment = new SaleGameCategoriesFragment();
+        SaleGoodCategoriesFragment saleGoodCategoriesFragment = new SaleGoodCategoriesFragment();
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .add(R.id.sale_categories_context,saleGameCategoriesFragment)
+                .add(R.id.sale_categories_context,saleGoodCategoriesFragment)
+                .hide(saleGameCategoriesFragment)
+                .show(saleGoodCategoriesFragment)
+                .commit();
+
+        CardView goodCategories = view.findViewById(R.id.salegoodcategories);
+        CardView gameCategories = view.findViewById(R.id.salegamecategories);
+
+        goodCategories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .hide(saleGameCategoriesFragment)
+                        .show(saleGoodCategoriesFragment)
+                        .commit();
+            }
+        });
+        gameCategories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("卖", "onClick: 测试");
+
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .hide(saleGoodCategoriesFragment)
+                        .show(saleGameCategoriesFragment)
+                        .commit();
+            }
+        });
         return view;
     }
 }

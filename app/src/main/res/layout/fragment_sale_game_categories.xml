@@ -3,10 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/theme_gray"
-    tools:context=".home.buyFrag.GameCategoriesFragment">
-
+    android:layout_height="match_parent"
+    tools:context=".home.saleFrag.SaleGameCategoriesFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -24,7 +22,7 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/gamecategoriesrecycler"
+                android:id="@+id/salegamecategoriesrecycler"
 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -374,9 +372,8 @@
                 android:hint="讨厌，都被你看光啦！"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
-                app:layout_constraintTop_toBottomOf="@+id/gamecategoriesrecycler" />
+                app:layout_constraintTop_toBottomOf="@+id/salegamecategoriesrecycler" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

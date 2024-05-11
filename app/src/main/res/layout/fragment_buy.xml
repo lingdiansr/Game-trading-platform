@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout21">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/gamecategories"
+            android:id="@+id/buygamecategories"
             android:layout_width="158dp"
             android:layout_height="40dp"
             app:cardBackgroundColor="@color/theme_gray"
@@ -48,7 +48,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/goodcategories"
+            app:layout_constraintStart_toEndOf="@+id/buygoodcategories"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -62,13 +62,13 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/goodcategories"
+            android:id="@+id/buygoodcategories"
             android:layout_width="158dp"
             android:layout_height="40dp"
             app:cardBackgroundColor="@color/theme_red"
             app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/gamecategories"
+            app:layout_constraintEnd_toStartOf="@+id/buygamecategories"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -86,7 +86,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/categories_context"
+        android:id="@+id/buy_categories_context"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="150dp"

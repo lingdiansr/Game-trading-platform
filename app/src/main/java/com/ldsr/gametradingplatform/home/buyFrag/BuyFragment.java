@@ -63,24 +63,24 @@ public class BuyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_buy, container, false);
-        GoodCategoriesFragment goodCategoriesFragment = new GoodCategoriesFragment();
-        GameCategoriesFragment gameCategoriesFragment = new GameCategoriesFragment();
+        BuyGoodCategoriesFragment buyGoodCategoriesFragment = new BuyGoodCategoriesFragment();
+        BuyGameCategoriesFragment buyGameCategoriesFragment = new BuyGameCategoriesFragment();
 
         getActivity().getSupportFragmentManager().beginTransaction()
-                .add(R.id.categories_context,gameCategoriesFragment)
-                .add(R.id.categories_context,goodCategoriesFragment)
-                .hide(gameCategoriesFragment)
-                .show(goodCategoriesFragment)
+                .add(R.id.buy_categories_context, buyGameCategoriesFragment)
+                .add(R.id.buy_categories_context, buyGoodCategoriesFragment)
+                .hide(buyGameCategoriesFragment)
+                .show(buyGoodCategoriesFragment)
                 .commit();
 
-        CardView goodCategories = view.findViewById(R.id.goodcategories);
-        CardView gameCategories = view.findViewById(R.id.gamecategories);
+        CardView goodCategories = view.findViewById(R.id.buygoodcategories);
+        CardView gameCategories = view.findViewById(R.id.buygamecategories);
         goodCategories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .hide(gameCategoriesFragment)
-                        .show(goodCategoriesFragment)
+                        .hide(buyGameCategoriesFragment)
+                        .show(buyGoodCategoriesFragment)
                         .commit();
             }
         });
@@ -88,8 +88,8 @@ public class BuyFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .hide(goodCategoriesFragment)
-                        .show(gameCategoriesFragment)
+                        .hide(buyGoodCategoriesFragment)
+                        .show(buyGameCategoriesFragment)
                         .commit();
             }
         });

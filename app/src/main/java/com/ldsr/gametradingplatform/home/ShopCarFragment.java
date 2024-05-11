@@ -136,7 +136,7 @@ public class ShopCarFragment extends Fragment {
     }
 
 
-    public class ShopCarGoodAdapter extends RecyclerView.Adapter<ShopCarGoodAdapter.ShopCarGoodViewHolder>{
+    private class ShopCarGoodAdapter extends RecyclerView.Adapter<ShopCarGoodAdapter.ShopCarGoodViewHolder>{
         private List<ShopCarGoodItem> shopCarGoodItems;
 
         public ShopCarGoodAdapter(List<ShopCarGoodItem> shopCarGoodItems) {
@@ -168,7 +168,7 @@ public class ShopCarFragment extends Fragment {
             return shopCarGoodItems.size();
         }
 
-        public class ShopCarGoodViewHolder extends RecyclerView.ViewHolder{
+        private class ShopCarGoodViewHolder extends RecyclerView.ViewHolder{
             CheckBox checkBox;
             ImageView imageView;
             TextView title;
@@ -186,7 +186,7 @@ public class ShopCarFragment extends Fragment {
             }
         }
     }
-    public class ShopCarAdapter extends RecyclerView.Adapter<ShopCarAdapter.ShopCarViewHolder>{
+    private class ShopCarAdapter extends RecyclerView.Adapter<ShopCarAdapter.ShopCarViewHolder>{
         private List<ShopCarShopItem> shopItems;
 
         public ShopCarAdapter(List<ShopCarShopItem> shopItems) {
@@ -215,7 +215,7 @@ public class ShopCarFragment extends Fragment {
             return shopItems.size();
         }
 
-        public class ShopCarViewHolder extends RecyclerView.ViewHolder{
+        private class ShopCarViewHolder extends RecyclerView.ViewHolder{
             CheckBox checkBox;
             TextView textView;
             RecyclerView recyclerView;

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.ldsr.gametradingplatform.R;
 import com.ldsr.gametradingplatform.home.buyFrag.BuyFragment;
 import com.ldsr.gametradingplatform.home.homeFrag.HomeFragment;
+import com.ldsr.gametradingplatform.home.saleFrag.SaleFragment;
 
 import java.util.HashMap;
 import java.util.Map;
