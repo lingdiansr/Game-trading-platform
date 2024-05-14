@@ -15,9 +15,7 @@
         android:theme="@style/Theme.GameTradingPlatform"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".home.saleFrag.PublishNextActivity"
-            android:exported="false" />
+
         <activity
             android:name=".home.saleFrag.PublishActivity"
             android:exported="false" />
@@ -27,9 +25,7 @@
         <activity
             android:name=".home.buyFrag.GoodListActivity"
             android:exported="false" />
-        <activity
-            android:name=".home.BuyGameCategoriesActivity"
-            android:exported="false" />
+
         <activity
             android:name=".home.homeFrag.TopUpCenterActivity"
             android:exported="false" />

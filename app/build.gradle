@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.ldsr.gametradingplatform'
+    namespace 'com.hnucm.c202201020245'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.ldsr.gametradingplatform"
+        applicationId "com.hnucm.c202201020245"
         minSdk 24
         targetSdk 34
         versionCode 1
